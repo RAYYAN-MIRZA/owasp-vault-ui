@@ -1,4 +1,11 @@
-# OwaspVaultUi
+<h1 align="center">OWASP Vault UI</h1>
+
+<p align="center"><strong>Group Number:</strong> 12</p>
+
+## Project Description
+
+OWASP Vault is a deliberately vulnerable web application designed to demonstrate the OWASP selected Top 10 security risks. It includes both secure and insecure implementations of common web app features, helping learners understand and practice real-world exploitation and defense techniques for the FrontEnd Development.
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.12.
 
