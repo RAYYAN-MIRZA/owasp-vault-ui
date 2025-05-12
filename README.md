@@ -32,3 +32,10 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+## Last But Not the Least
+
+In this path **src/database** of project,
+
+There a **.Bak** of Testing DB named as **VARE** is Present which can be Backed Up in SQL server and used Along With the Project.
+
