@@ -1,0 +1,31 @@
+<div class="p-6 max-w-2xl mx-auto">
+    <h2 class="text-3xl font-bold mb-4 text-gray-800">💬 Public Comments</h2>
+  
+    <div *ngIf="isSecureMode" class="mb-4" style="display: flex; flex-direction: column;">
+      <textarea
+        [(ngModel)]="text"
+        rows="3"
+        class="w-full p-3 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+        placeholder="Write a comment..."
+      ></textarea>
+      <button
+        (click)="postComment()"
+        [disabled]="!text.trim()"
+        class="mt-2 px-4 py-2 rounded-lg "    
+      >
+        Post Comment
+      </button>
+    </div>
+  
+    <div *ngIf="isSecureMode===true" class="space-y-3">
+      <div *ngFor="let comment of comments" class="p-3 border rounded-lg bg-gray-50 shadow-sm">
+        <div [innerHTML]="comment.html" class="text-gray-800"></div>
+      </div>
+    </div>
+    <div *ngIf="isSecureMode===false" class="space-y-3">
+        <div *ngFor="let comment of comments" class="p-3 border rounded-lg bg-gray-50 shadow-sm">
+          <div [innerHTML]="comment.raw" class="text-gray-800"></div>
+        </div>
+      </div>
+  </div>
+  

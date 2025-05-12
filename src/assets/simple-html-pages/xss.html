@@ -1,0 +1,35 @@
+<!-- Run This page Separately -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Vulnerable XSS Comment Page</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    textarea { width: 100%; height: 80px; margin-bottom: 10px; }
+    .comment { background: #f3f3f3; padding: 10px; margin-bottom: 10px; border-radius: 5px; }
+  </style>
+</head>
+<body>
+  <h2>💬 Public Comments (XSS Vulnerable)</h2>
+  <textarea id="commentInput" placeholder="Write a comment..."></textarea>
+  <br>
+  <button onclick="postComment()">Post Comment</button>
+
+  <div id="commentsSection"></div>
+
+  <script>
+    function postComment() {
+      const input = document.getElementById("commentInput").value;
+      const commentDiv = document.createElement("div");
+      commentDiv.className = "comment";
+
+      // ❗Directly inject user input as HTML (vulnerable to XSS)
+      commentDiv.innerHTML = input;
+
+      document.getElementById("commentsSection").appendChild(commentDiv);
+      document.getElementById("commentInput").value = '';
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+
+<h2>User Profile</h2>
+<div *ngIf="isSecureMode">
+Secure is Still in Progress
+</div>
+<div *ngIf="toShow">
+    <p>profile {{profile}}  Is now talking</p>
+    <p>Info Of User!!!</p>
+</div>
+<div *ngIf="!toShow">
+    <p>Un - Authorized</p>
+</div>

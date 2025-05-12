@@ -1,0 +1,18 @@
+<p>{{ isSecureMode ? 'Secure' : 'Insecure' }} Login </p>
+<!-- <div *ngIf="userId!==null">Welcome USER ID: {{userId}}</div> -->
+<div *ngIf="isSecureMode; else insecureForm" class="login-form">
+  <input type="text" [(ngModel)]="username" placeholder="Username" />
+  <input type="password" [(ngModel)]="password" placeholder="Password" />
+  <button (click)="secureLogin()">Login Secure</button>
+  <p *ngIf="message">{{ message }}</p>
+</div>
+
+
+<ng-template #insecureForm>
+  <input type="text" [(ngModel)]="username" placeholder="Username" />
+  <input type="password" [(ngModel)]="password" placeholder="Password" />
+  <button (click)="unsecureLogin()">Login Unsecure</button>
+
+  <p *ngIf="message">{{ message }}</p>
+</ng-template>
+
